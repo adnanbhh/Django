@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>infinity</title>
+</head>
+<body>
+<header>
+	<div class="logow" href="/">
+		{% load static %}
+		<img src="{% static '/'%}{{img}}" alt="nsh">
+	</div>
+
+	<form class="/" action="/search?q=sear" method="get" role="search" id="search">
+		<input id="input" placeholder="{{keyword}}" name="sear" value="{{keyword}}" />
+			<button id="button"><i class="fa fa-search"></i></button>
+	</form>
+</header>
+
+<div class="all">
+	{%if DONNEE %}
+		<div class="result"><h3>pubmed</h3></div>
+		{% for x in DONNEE %}
+		<div class="result">
+			{% for y in x %}
+					{% if forloop.counter == 4%}
+						<a href="https://pubmed.ncbi.nlm.nih.gov/{{y.0}}">{{y.0}}</a>
+						<br>
+						<br>
+					{% else%}
+						{{y.0}}<br>
+					{% endif %}
+			{% endfor %}
+		</div>
+		<br>
+		{% endfor %}
+	{% endif %}
+	{%if DONNEE1 %}
+		<div class="result"><h3>espacenet</h3></div>
+		{% for x in DONNEE1 %}
+		<div class="result">
+			{% for y in x %}
+					{% if forloop.counter == 1%}
+						<a href="{{y.0}}">
+							{% elif forloop.counter == 2%}
+							{{y.0}}</a>
+						<br>
+						<br>
+					{% else%}
+						{{y.0}}<br>
+					{% endif %}
+			{% endfor %}
+		</div>
+		<br>
+		{% endfor %}
+	{% endif %}
+		{%if DONNEE2 %}
+		<div class="result"><h3>scopus</h3></div>
+		{% for x in DONNEE2 %}
+		<div class="result">
+			{% for y in x %}
+					{% if forloop.counter == 1%}
+						<a href="{{y.0}}">
+							{% elif forloop.counter == 2%}
+							{{y.0}}</a>
+						<br>
+						<br>
+					{% else%}
+						{{y.0}}<br>
+					{% endif %}
+			{% endfor %}
+		</div>
+		<br>
+		{% endfor %}
+	{% endif %}
+</div>
+
+</body>
+</html>
+
+<style type="text/css">
+
+body {
+    background: #EDEDE6;
+    color: #000;
+    font: 20px "Lato", arial, sans-serif;
+}
+
+
+div .result{
+	margin-top: 35px;
+    margin-left: 170px;
+    margin-bottom: 20px;
+}
+
+a .link{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+
+
+	header
+	{
+		display: flex;
+	}
+	img
+	{
+		margin-top: 20px;
+		margin-left: 20px;
+		margin-right: 20px;
+		width: 120px;
+		padding: 0;
+	}
+
+	@media (max-width: 900px)
+	{
+	img {
+		margin-top: 20px;
+		margin-left: 30px;
+		margin-right: 20px ;
+		width: 100px;
+		padding: 0;
+
+		transition-duration: 1s;
+	}
+	}
+
+
+	#search {
+	margin-top: 35px;
+	padding: 0.5%;
+    background: #fff;
+    border-radius: 25px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 800px;
+    height: 25px;
+    box-shadow: 1px 1px 1px #494c51;
+	}
+
+	#search button,
+	#search input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    display: flex;
+    color: inherit;
+    font: inherit;
+    outline: 0;
+}
+
+#button i {
+    font-size: 23px;
+    color: white;
+}
+
+#search button {
+    cursor: pointer;
+    padding: 0 0.25em;
+    display: flex;
+}
+
+#search input {
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+#search input::placeholder {
+    color: #000;
+}
+
+</style>

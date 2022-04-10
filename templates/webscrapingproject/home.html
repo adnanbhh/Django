@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>infinity</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+<div class="logow">
+	{% load static %}
+<img src="{% static '/'%}{{img}}" alt="nsh">
+</div>
+	<form class="/" action="search?q=sear" method="get" >
+		<input type="text" id="input" placeholder="" name="sear" style="
+	-webkit-box-align: center;
+    align-items: center;
+    background: #494c51;
+    border-radius: 25px;
+    margin: 0.5em 0;
+    padding: 0.5em 0.5em 0.5em 1em;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 800px;
+    height: 40px;
+	-webkit-box-flex: 1;
+    flex: 1;
+    font-weight: 500;
+    font-size: 23px;"/>
+		<div><br></div>
+		<div style="text-align: center;">
+				<input type="checkbox" id="Pubmed" name="Base0" value="pubmed">
+						<label for="pubmed">Pubmed</label>
+				<input type="checkbox" id="espacenet" name="Base1" value="espacenet">
+						<label for="espacenet">espacenet</label>
+				<input type="checkbox" id="scopus" name="Base2" value="scopus">
+						<label for="scopus">scopus</label>
+				<input type="checkbox" id="UPTDO" name="Base3" value="UPTDO">
+						<label for="UPTDO">USPTO</label>
+			<input type="checkbox" id="IEEE" name="Base4" value="IEEE">
+						<label for="IEEE">IEEE</label>
+			<input type="checkbox" id="wikipedia" name="Base5" value="wikipedia">
+						<label for="wikipedia">wikipedia</label>
+				<input type="checkbox" id="google" name="Base6" value="google">
+						<label for="google">google</label>
+			</div>
+			<button id="button"></button>
+
+	</form>
+</body>
+</html>
+
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased
+}
+
+body {
+    -webkit-box-align: center;
+    align-items: center;
+    background: #EDEDE6;
+    color: #000;
+    display: -webkit-box;
+    display: flex;
+    font: 20px "Lato", arial, sans-serif;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column nowrap;
+    height: 100vh;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100vw
+}
+
+.logow
+{
+display: flex;
+margin-bottom: 1%;
+margin-top: -7%;
+justify-content: center;
+}
+
+.note {
+    font-size: 0.375em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 1px
+}
+
+#search {
+    -webkit-box-align: center;
+    align-items: center;
+    background: #494c51;
+    border-radius: 25px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0.5em 0;
+    padding: 0.5em 0.5em 0.5em 1em;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 40%;
+    height: 6%;
+}
+
+#search:hover,
+#search:focus {
+    background: #D4D4CD;
+}
+
+#search button,
+#search #input {
+
+}
+
+#button i {
+    font-size: 30px;
+    color: black;
+}
+
+#search button {
+    cursor: pointer;
+    padding: 0 0.25em;
+    display: center;
+}
+
+#search #input {
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-weight: 500;
+    font-size: 23px;
+}
+
+#search #input::placeholder {
+    color: #000;
+}
+
+@media screen and (max-width: 900px)
+{
+	#search button {
+		opacity : 0;
+	}
+}
+
+</style>
+
+<script type="text/javascript">
+
+	function load() {
+$("#button i").removeClass("fa fa-search");
+$("#button i").addClass("fa fa-circle-o-notch fa-spin");
+
+setTimeout(function() {
+$("#button i").removeClass("fa fa-circle-o-notch fa-spin");
+$("#button i").addClass("fa fa-search");
+}, 1500);
+}
+
+$(document).ready(function(){
+
+
+$("#button").on('click', load);
+
+$("#input").on('keydown', function() {
+
+if(event.keyCode == 13) load();
+});
+
+});
+
+</script>

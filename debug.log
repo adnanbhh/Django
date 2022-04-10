@@ -1,0 +1,12 @@
+[1101/033126.140:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Dell\AppData\Local\Temp\scoped_dir7352_1358994796\Crashpad\attachments\66a57c9f-9e2b-4f49-b464-5a7687ea7830: Le chemin d’accès spécifié est introuvable. (0x3)
+[1101/120038.358:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[1101/120038.359:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[1101/120038.359:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[1101/120038.359:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[1101/120038.367:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[1101/120038.367:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[1101/120038.359:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[1101/120038.891:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[1101/120038.891:ERROR:exception_snapshot_win.cc(99)] thread ID 14236 not found in process
+[1101/120038.891:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[1101/120038.891:ERROR:exception_snapshot_win.cc(99)] thread ID 4944 not found in process
